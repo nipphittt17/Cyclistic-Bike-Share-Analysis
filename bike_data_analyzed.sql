@@ -75,7 +75,7 @@ GROUP BY day_of_week, time_ride
 ORDER BY day_of_week, ride_count DESC;
 
 
--- Find umber of rides and average time of each month compared between member and casual
+-- Find number of rides and average time of each month compared between member and casual
 SELECT out_t.month, COUNT(ride_id) AS member_ride,
 	TIME_FORMAT(SEC_TO_TIME(AVG(TIME_TO_SEC(CAST(ride_length AS TIME)))), '%H:%i:%s') AS member_avg_time,
     in_t.num_of_ride AS casual_ride , in_t.avg_time AS casual_avg_time
@@ -92,7 +92,7 @@ GROUP BY month
 ORDER BY month;
 
 
--- Find the top 10 frequent routes of members
+-- Find the top 10 frequent routes of members and casuals
 
 SELECT 
     start_station_name, 
@@ -146,6 +146,18 @@ WHERE start_station_name = end_station_name
 GROUP BY start_station_name
 ORDER BY total_ride DESC
 LIMIT 10;
+
+SELECT a.*
+FROM bike_data_2023_cleaned a
+INNER JOIN (
+    SELECT start_station_name
+    FROM bike_data_2023_cleaned
+    WHERE start_station_name = end_station_name
+    GROUP BY start_station_name
+    ORDER BY COUNT(*) DESC
+    LIMIT 10
+) b ON a.start_station_name = b.start_station_name
+WHERE a.start_station_name = a.end_station_name;
 
 -- Order busy hours for each month
 SELECT month, 
