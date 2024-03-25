@@ -22,28 +22,28 @@ The primary objective of this project is to convert Cyclistic's casual riders in
 The dataset can be found at [data source](https://divvy-tripdata.s3.amazonaws.com/index.html) [It has been made by Motivate International Inc. under [this license](https://divvybikes.com/data-license-agreement).] <br>
 In this case study, I utilized a dataset spanning from January to June 2023, comprising six files in total. Below is a table detailing the 13 variables along with their descriptions.
 
-| Variable          | Description                                                                                                     |
-|-------------------|-----------------------------------------------------------------------------------------------------------------|
+| Variable          | Description                                                                                                    |
+|-------------------|----------------------------------------------------------------------------------------------------------------|
 | ride_id           | The unique id of each ride                                                                                     |
 | rideable_type     | Type of bicycles, including classic, electric, and docked bikes                                                |
 | started_at        | The start time of the trip                                                                                     |
 | ended_at          | The end time of the trip                                                                                       |
 | start_station_name| The name of the station where the ride started                                                                 |
-| start_station_id  | The unique identifier for the station where the ride started                                                    |
+| start_station_id  | The unique identifier for the station where the ride started                                                   |
 | end_station_name  | The name of the station where the ride ended                                                                   |
-| end_station_id    | The unique identifier for the station where the ride ended                                                      |
-| start_lat         | The latitude coordinate of the starting station                                                               |
-| start_lng         | The longitude coordinate of the starting station                                                              |
-| end_lat           | The latitude coordinate of the ending station                                                                 |
-| end_lng           | The longitude coordinate of the ending station                                                                |
-| member_casual     | Indicates whether the rider is a member or a casual rider                                                       |
+| end_station_id    | The unique identifier for the station where the ride ended                                                     |
+| start_lat         | The latitude coordinate of the starting station                                                                |
+| start_lng         | The longitude coordinate of the starting station                                                               |
+| end_lat           | The latitude coordinate of the ending station                                                                  |
+| end_lng           | The longitude coordinate of the ending station                                                                 |
+| member_casual     | Indicates whether the rider is a member or a casual rider                                                      |
 
 
 ## Data exploration
 R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, resulting in a total of 2,390,459 entries. Subsequently, the skim_without_charts function was utilized to generate a data summary, as depicted in the figure below.
-
+<p align="center">
 <img src="/images/skim_without_charts.png" alt="Data Summary" height="500">
-
+</p>
 Referring to the figure, it's evident that there are null values present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
 Following this observation, I conducted checks for duplications and spelling errors within string datatype columns, including rideable_type, start_station_name, and end_station_name. No errors were detected.
 
