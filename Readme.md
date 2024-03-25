@@ -48,7 +48,7 @@ In this case study, I utilized a dataset spanning from January to June 2023, com
 ## Data exploration
 R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, resulting in a total of 2,390,459 entries. Subsequently, the skim_without_charts function was utilized to generate a data summary, as depicted in the figure below.
 
-![Data Summary](/images/data_summary.png)
+![Data Summary](/images/skim_without_charts.png)
 
 Referring to the figure, it's evident that there are null values present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
 Following this observation, I conducted checks for duplications and spelling errors within string datatype columns, including rideable_type, start_station_name, and end_station_name. No errors were detected.
