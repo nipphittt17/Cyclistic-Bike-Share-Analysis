@@ -10,6 +10,9 @@ In 2016, Cyclistic launched a successful bike-share program in Chicago, which ha
 
 ## Business tasks
 The following are key questions that will guide the future marketing program.
+1. How do annual members and casual riders use Cyclistic bikes differently?
+2. Why would casual riders buy Cyclistic annual memberships?
+3. How can Cyclistic use digital media to influence casual riders to become members?
  
 The primary objective of this project is to convert Cyclistic's casual riders into annual members. This will be achieved by uncovering valuable insights from data on how casual riders and annual members use Cyclistic bikes differently. The project utilized R programming for data exploration and cleaning, SQL for analysis, and Tableau for visualization. Below are the links to each component of the project for further exploration.
 
@@ -20,6 +23,7 @@ The primary objective of this project is to convert Cyclistic's casual riders in
 
 ## Data preparation
 The dataset can be found at [data source](https://divvy-tripdata.s3.amazonaws.com/index.html) [It has been made by Motivate International Inc. under [this license](https://divvybikes.com/data-license-agreement).] <br>
+
 In this case study, I utilized a dataset spanning from January to June 2023, comprising six files in total. Below is a table detailing the 13 variables along with their descriptions.
 
 | Variable          | Description                                                                                                    |
@@ -41,7 +45,9 @@ In this case study, I utilized a dataset spanning from January to June 2023, com
 
 ## Data exploration
 R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, resulting in a total of 2,390,459 entries. Subsequently, the skim_without_charts function was utilized to generate a data summary, as depicted in the figure below.
+
 <img src="/images/skim_without_charts.png" alt="Data Summary" height="500"> <br>
+
 Referring to the figure, it's evident that there are null values present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
 Following this observation, I conducted checks for duplications and spelling errors within string datatype columns, including rideable_type, start_station_name, and end_station_name. No errors were detected.
 
@@ -49,10 +55,10 @@ Following this observation, I conducted checks for duplications and spelling err
 
 Following exploration, the dataset was cleaned by:
 
-- Entries with null values in start_station_id, start_station_name, end_station_id, and end_station_name were removed.
-- Three new columns were added: ride_length (ended_at - started_at), day_of_week (Sunday - Saturday), and month.
-- Rides where the end time preceded the start time were excluded.
-- Rides with durations longer than a day or less than a minute were excluded.
+1. Entries with null values in start_station_id, start_station_name, end_station_id, and end_station_name were removed.
+2. Three new columns were added: ride_length (ended_at - started_at), day_of_week (Sunday - Saturday), and month.
+3. Rides where the end time preceded the start time were excluded.
+4. Rides with durations longer than a day or less than a minute were excluded.
 
 After cleaning, 613,050 entries were removed, resulting in a total of 1,777,409 entries in the dataset.
 The cleaned data was saved as a .csv file, making it readily available for analysis.
@@ -67,9 +73,16 @@ To address the key findings, the following analyses were performed using SQL.
 6. The number of casual riders and annual members in each month, along with the average trip duration.
 7. The top 10 popular routes for annual members, including the total number of rides.
 8. The top 10 popular routes for casual riders, including the total number of rides.
-9. The top 10 round trip routes, including the number of rides by both members and casual riders.   
-<br> The codes and results can be found [here](bike_data_analyzed.sql)
+9. The top 10 round trip routes, including the number of rides by both members and casual riders.
+
+The codes and results can be found [here](bike_data_analyzed.sql)
 
 ## Data visualization
-The visualization was crafted using Tableau Public, featuring two pages: "Ride Distribution" and "Duration & Routes". The first page illustrates the total number of rides compared between annual members and casual riders across six months, each bike type, weekdays, and hourly intervals. The second page displays the average ride length (in minutes) across weekdays and months, alongside the top 10 popular routes for annual members, casual riders, and round trips.
-The visualization can be found [here](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
+The visualization was crafted using Tableau Public, featuring two pages: "Ride Distribution" and "Duration & Routes". 
+The first page illustrates the total number of rides compared between annual members and casual riders across six months, each bike type, weekdays, and hourly intervals. 
+<br><br> <img src="/images/dashboard_1.png" alt="Data Summary" height="500"> <br>
+
+The second page displays the average ride length (in minutes) across weekdays and months, alongside the top 10 popular routes for annual members, casual riders, and round trips.
+<br><br><img src="/images/dashboard_2.png" alt="Data Summary" height="500"> <br>
+
+The interactive dashboard can be found [here](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
