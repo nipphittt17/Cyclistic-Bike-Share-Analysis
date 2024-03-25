@@ -22,7 +22,7 @@ How can Cyclistic use digital media to influence casual riders to become members
 
 
 ## Data preparation
-The dataset can be found at [data source](https://divvy-tripdata.s3.amazonaws.com/index.html) [The data has been made available by Motivate International Inc. under this license.]
+The dataset can be found at [data source](https://divvy-tripdata.s3.amazonaws.com/index.html) [The data has been made available by Motivate International Inc. under [this license](https://divvybikes.com/data-license-agreement).] <br>
 In this case study, I utilized a dataset spanning from January to June 2023, comprising six files in total. Below is a table detailing the 16 variables along with their descriptions.
 
 | Variable | Description |
