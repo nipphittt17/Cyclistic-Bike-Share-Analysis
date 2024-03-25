@@ -42,7 +42,7 @@ In this case study, I utilized a dataset spanning from January to June 2023, com
 ## Data exploration
 R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, resulting in a total of 2,390,459 entries. Subsequently, the skim_without_charts function was utilized to generate a data summary, as depicted in the figure below.
 
-![Data Summary](/images/skim_without_charts.png)
+<img src="/images/skim_without_charts.png" alt="Data Summary" width="600" height="400">
 
 Referring to the figure, it's evident that there are null values present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
 Following this observation, I conducted checks for duplications and spelling errors within string datatype columns, including rideable_type, start_station_name, and end_station_name. No errors were detected.
@@ -52,7 +52,7 @@ Following this observation, I conducted checks for duplications and spelling err
 Following exploration, the dataset was cleaned by:
 
 - Entries with null values in start_station_id, start_station_name, end_station_id, and end_station_name were removed.
-- Three new columns were added: ride_length (ride duration computed by ended_at - started_at), day_of_week (Sunday - Saturday), and month.
+- Three new columns were added: ride_length (ended_at - started_at), day_of_week (Sunday - Saturday), and month.
 - Rides where the end time preceded the start time were excluded.
 - Rides with durations longer than a day or less than a minute were excluded.
 
