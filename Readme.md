@@ -67,8 +67,7 @@ To address the key findings, the following analyses were performed using SQL.
 6. The number of casual riders and annual members in each month, along with the average trip duration.
 7. The top 10 popular routes for annual members, including the total number of rides.
 8. The top 10 popular routes for casual riders, including the total number of rides.
-9. The top 10 round trip routes, including the number of rides by both members and casual riders.
-    
+9. The top 10 round trip routes, including the number of rides by both members and casual riders.   
 <br> The codes and results can be found [here](bike_data_analyzed.sql)
 
 ## Data visualization
