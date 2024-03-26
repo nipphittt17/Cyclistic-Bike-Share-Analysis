@@ -22,7 +22,7 @@ The primary objective of this project is to convert Cyclistic's casual riders in
 
 
 ## Data preparation
-The dataset can be found at [data source](https://divvy-tripdata.s3.amazonaws.com/index.html) [It has been made by Motivate International Inc. under [this license](https://divvybikes.com/data-license-agreement).] <br>
+The dataset can be found [here](https://divvy-tripdata.s3.amazonaws.com/index.html). It has been made by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement). <br>
 
 In this case study, I utilized a dataset spanning from January to June 2023, comprising six files in total. Below is a table detailing the 13 variables along with their descriptions.
 
@@ -44,12 +44,12 @@ In this case study, I utilized a dataset spanning from January to June 2023, com
 
 
 ## Data exploration
-R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, resulting in a total of 2,390,459 entries. Subsequently, the skim_without_charts function was utilized to generate a data summary, as depicted in the figure below.
+R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, resulting in a total of 2,390,459 entries. Subsequently, the **skim_without_charts** function was utilized to generate a data summary, as depicted in the figure below.
 
 <img src="/images/skim_without_charts.png" alt="Data Summary" height="500"> <br>
 
-Referring to the figure, it's evident that there are null values present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
-Following this observation, I conducted checks for duplications and spelling errors within string datatype columns, including rideable_type, start_station_name, and end_station_name. No errors were detected.
+Referring to the figure, it's evident that there are **null values** present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
+Following this observation, I conducted checks for **duplications** and **spelling errors** within string datatype columns, including rideable_type, start_station_name, and end_station_name. No errors were detected.
 
 ## Data cleaning
 
@@ -57,8 +57,8 @@ Following exploration, the dataset was cleaned by:
 
 1. Entries with null values in start_station_id, start_station_name, end_station_id, and end_station_name were removed.
 2. Three new columns were added: ride_length (ended_at - started_at), day_of_week (Sunday - Saturday), and month.
-3. Rides where the end time preceded the start time were excluded.
-4. Rides with durations longer than a day or less than a minute were excluded.
+3. Entries where the ended time preceded the started time were excluded.
+4. Entries with ride durations longer than a day or less than a minute were excluded.
 
 After cleaning, 613,050 entries were removed, resulting in a total of 1,777,409 entries in the dataset.
 The cleaned data was saved as a .csv file, making it readily available for analysis.
@@ -85,4 +85,24 @@ The first page illustrates the total number of rides compared between annual mem
 The second page displays the average ride length (in minutes) across weekdays and months, alongside the top 10 popular routes for annual members, casual riders, and round trips.
 <br><br><img src="/images/dashboard_2.png" alt="Data Summary" height="500"> <br>
 
+
 The interactive dashboard can be found [here](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
+
+## Key findings
+- **Total Ride Distribution:** Annual members contribute to areound two times higher number of total rides, compared to casual riders.
+ 
+- **Monthly Variation:** Both casual riders and annual members show increasing rides across six months. The number peaks in June, coinciding with the summer season in Chicago.
+
+- **Bike Type:** Both annual members and casual riders preferred classic bikes over electric bikes. However, only casual members utilized docked bikes.
+
+- **Weekly Variation:** Annual members exhibit higher bike usage on weekdays, whereas casual riders show increased usage on weekends.
+
+- **Hourly Usage:** Annual members peak in usage at 8 a.m. and 5 p.m., while casual riders peak in the afternoon.
+
+- **Ride Duration:** Casual riders typically experience longer average ride durations in comparison to annual members across all weekdays and months.
+
+- **Popular Routes:** Casual riders and annual members have distinctively different routes with the highest ride frequencies. While annual members' preferred routes tend to be more directed towards specific destinations, 7 out of the top 10 favored routes for casual riders are round trips. 
+
+Combining the analysis of bike type usage, weekday and hourly patterns, it appears that annual members primarily utilize Cyclistic bikes for daily commutes or errands. On the other hand, casual riders tend to use Cyclistic bikes more for leisure. Analysis on popular routes also provides further evidence supporting this assumption.
+
+## Recommendations
