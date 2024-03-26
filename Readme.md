@@ -17,7 +17,7 @@ The following are key questions that will guide the future marketing program.
 The primary objective of this project is to convert Cyclistic's casual riders into annual members. This will be achieved by uncovering valuable insights from data on how casual riders and annual members use Cyclistic bikes differently. The project utilized R programming for data exploration and cleaning, SQL for analysis, and Tableau for visualization. Below are the links to each component of the project for further exploration.
 
 - [Data cleaning](bike_2023_clean_data.R)
-- [Data analysis](bike_data_analyzed.sql)
+- [Data analysis](bike_2023_analyze_data.sql)
 - [Data visualization](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
 
 
@@ -75,7 +75,7 @@ To address the key findings, the following analyses were performed using SQL.
 8. The top 10 popular routes for casual riders, including the total number of rides.
 9. The top 10 round trip routes, including the number of rides by both members and casual riders.
 
-The codes and results can be found [here](bike_data_analyzed.sql)
+The codes and results can be found [here](bike_2023_analyze_data.sql)
 
 ## Data visualization
 The visualization was crafted using Tableau Public, featuring two pages: "Ride Distribution" and "Duration & Routes". 
