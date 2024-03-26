@@ -93,7 +93,7 @@ The interactive dashboard can be found [here](https://public.tableau.com/views/b
  
 - **Monthly Variation:** Both casual riders and annual members show increasing rides across six months. The number peaks in June, coinciding with the summer season in Chicago.
 
-- **Bike Type:** Both annual members and casual riders preferred classic bikes over electric bikes. However, only casual members utilized docked bikes.
+- **Bike Type:** Both annual members and casual riders preferred classic bikes over electric bikes. However, only casual members utilized docked bikes and contribute to the longest average ride durations.
 
 - **Weekly Variation:** Annual members exhibit higher bike usage on weekdays, whereas casual riders show increased usage on weekends.
 
@@ -106,3 +106,10 @@ The interactive dashboard can be found [here](https://public.tableau.com/views/b
 Combining the analysis of bike type usage, weekday and hourly patterns, it appears that annual members primarily utilize Cyclistic bikes for daily commutes or errands. On the other hand, casual riders tend to use Cyclistic bikes more for leisure. Analysis on popular routes also provides further evidence supporting this assumption.
 
 ## Recommendations
+- **Introduce Customized Membership Plans** tailored for casual riders as they exhibit distinct ride patterns compared to annual members as mentioned in key findings. One recommendation is a membership plan targeting weekend bike users, offering reduced costs compared to regular annual memberships with a limited number of uses throughout the year e.g. approximately matching the number of weekends annually. This necessitates further analysis of the average yearly cost spending by casual riders to present the benefits of such a plan and encourage membership uptake.
+
+- **Launching Advertisements During Peak Hours Particularly on Weekends** to encourage casual riders to consider memberships through digital media. These advertisements could emphasize the advantages of annual membership, such as cost savings or additional perks. This targeted approach aims to capture the attention of casual riders during their leisure time and persuade them to consider becoming long-term members.
+
+- **Encourage casual riders who frequently use docked bikes**, as this group often have round trips with the longest average ride duration, around 40 minutes. This suggests usage for exercise. The company could consider developing an application to record ride duration and other health-related features. This application could offer exclusive features accessible only to members, serving as an incentive for casual riders to consider annual membership.
+
+- **Mobile application for seamless user experience** can be used to encourage users to explore supplementary services, potentially fostering brand loyalty. The application can also serve as a channel to promote marketing campaigns and advertisements, showcasing the benefits of annual membership. 
