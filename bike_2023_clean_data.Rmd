@@ -11,7 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This is an R Markdown document for data cleaning process of Cyclistic Bike Share Case Study.
 
-### Neccessary packages
+
+
+### Necessary packages
 ```{r necessary packages}
 library("tidyverse")
 library("readr")
@@ -22,7 +24,9 @@ library("lubridate")
 library("hms")
 ```
 
-### Download and merge the datasets from January to June
+
+
+### Download and merge the datasets from January to June 2023
 ```{r merge and download dataset}
 # Change the path here
 setwd("/Users/nipphittt/Documents/DA_Project/GoogleAnalytics/Project_Track1/2023_data/")
@@ -36,10 +40,14 @@ bike_data6 <- read_csv("202306-divvy-tripdata.csv")
 bike_data <- rbind(bike_data1, bike_data2, bike_data3, bike_data4, bike_data5, bike_data6)
 ```
 
+
+
 ### Data exploration
 ```{r data exploration}
 skim_without_charts(bike_data)
 ```
+
+
 
 ### Checks for duplications and spelling errors within string datatype columns
 ```{r check duplications and spelling errors}
@@ -49,17 +57,18 @@ print(unique(bike_data$rideable_type))
 #print(unique(bike_data$end_station_name))
 ```
 
+
+
 ### Remove entries with null values in start_station_id, start_station_name, end_station_id, and end_station_name.
 ```{r filter entries with null values out}
 bike_data <- bike_data %>% 
-  filter(!is.na(start_station_id))
-bike_data <- bike_data %>% 
-  filter(!is.na(start_station_name))
-bike_data <- bike_data %>% 
-  filter(!is.na(end_station_id))
-bike_data <- bike_data %>% 
+  filter(!is.na(start_station_id)) %>% 
+  filter(!is.na(start_station_name)) %>% 
+  filter(!is.na(end_station_id)) %>% 
   filter(!is.na(end_station_name))
 ```
+
+
 
 ### Add three new columns: ride_length (ended_at - started_at), day_of_week (Sunday = 1, Monday = 2, ...), and month.
 ```{r create additional columns}
@@ -69,26 +78,24 @@ bike_data <- bike_data %>%
   mutate(month = month(started_at))
 ```
 
+
+
 ### Exclude entries where the ended time preceded the started time.
 ```{r exclude entries 1}
 bike_data <- bike_data %>% 
   filter(!(ended_at <= started_at))
-filtered_check <- filter(bike_data, ended_at < started_at)
 ```
+
 
 
 ### Exclude entries with ride durations longer than a day or less than a minute.
 ```{r exclude entries 2}
-# ride_length are longer than a day (24 hrs).
 bike_data <- bike_data %>% 
-  filter(!(difftime(ended_at, started_at) > 24*60*60))
-filtered_check2 <- filter(bike_data, difftime(ended_at, started_at) > 24*60*60)
-
-# ride_length are less than a minute.
-filtered_check3 <- filter(bike_data, difftime(ended_at, started_at) < 60)
-bike_data <- bike_data %>% 
+  filter(!(difftime(ended_at, started_at) > 24*60*60)) %>% 
   filter(!(difftime(ended_at, started_at) < 60))
 ```
+
+
 
 ### Import cleaned data as .csv file
 ```{r import .csv file}
