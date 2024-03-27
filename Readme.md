@@ -82,10 +82,10 @@ The queries can be found [here](bike_2023_analyze_data.sql)
 ## Data visualization
 The visualization was crafted using Tableau Public, featuring two pages: **Ride Distribution** and **Duration & Routes**. 
 The first page illustrates the total number of rides compared between annual members and casual riders across six months, each bike type, weekdays, and hourly intervals. 
-<br><br> <img src="/images/dashboard_1.png" alt="Data Summary" height="500"> <br>
+<br><br> <img src="/images/dashboard_1.png" alt="Data Summary" height="400"> <br>
 
 The second page displays the average ride length (in minutes) across weekdays and months, alongside the top 10 popular routes for annual members, casual riders, and round trips.
-<br><br><img src="/images/dashboard_2.png" alt="Data Summary" height="500"> <br>
+<br><br><img src="/images/dashboard_2.png" alt="Data Summary" height="400"> <br>
 
 
 The interactive dashboard can be found [here](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
