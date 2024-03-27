@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS bike_data;
 USE bike_data;
 
--- Table data import wizard (bike_data_cleaned.csv) 
+-- Table data import wizard (bike_data_2023_cleaned.csv) 
 
 SELECT DISTINCT(ride_id) FROM bike_data_2023_cleaned;
 
