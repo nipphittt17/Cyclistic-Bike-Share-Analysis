@@ -80,7 +80,7 @@ To address the key findings, the following analyses were performed using SQL.
 The queries can be found [here](bike_2023_analyze_data.sql)
 
 ## Data visualization
-The visualization was crafted using Tableau Public, featuring two pages: **Ride Distribution** and **Duration & Routes**. 
+The visualization was crafted using Tableau Public, featuring two pages: **Ride Distribution** and **Duration & Routes**.
 The first page illustrates the total number of rides compared between annual members and casual riders across six months, each bike type, weekdays, and hourly intervals. 
 <br><br> <img src="/images/dashboard_1.png" alt="Data Summary" height="400"> <br>
 
@@ -95,7 +95,7 @@ The interactive dashboard can be found [here](https://public.tableau.com/views/b
  
 - **Monthly Variation:** Both casual riders and annual members show increasing rides across six months. The number peaks in June, coinciding with the summer season in Chicago.
 
-- **Bike Type:** Both annual members and casual riders preferred classic bikes over electric bikes. However, only casual members utilized docked bikes and contributed to the longest average ride durations.
+- **Bike Type:** Both annual members and casual riders preferred classic bikes over electric bikes. Only casual members utilized docked bikes, which contributed to the longest average ride durations.
 
 - **Weekly Variation:** Annual members exhibit higher bike usage on weekdays, whereas casual riders show increased usage on weekends.
 
