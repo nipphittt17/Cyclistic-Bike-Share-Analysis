@@ -4,9 +4,9 @@
 The Cyclistic Bike Share Case Study is a capstone project for the **Google Data Analytics Professional Certificate** offered by Coursera.
 
  
-The primary objective of this project is to convert Cyclistic's casual riders into annual members. This will be achieved by uncovering valuable insights from data on how casual riders and annual members use Cyclistic bikes differently. The project utilized **R programming** for data exploration and cleaning, **SQL** for analysis, and **Tableau** for visualization. Below are the links to each component of the project for further exploration.
+The primary objective of this project is to convert Cyclistic's casual riders into annual members. This will be achieved by uncovering valuable insights from data on how casual riders and annual members use Cyclistic bikes differently. The project utilized **R programming** for data exploration and cleaning, **SQL** for analysis, and **Tableau** for visualization. Below are the links to each component of the project.
 
-- [Data cleaning](bike_2023_clean_data.R)
+- [Data cleaning](bike_2023_clean_data.Rmd)
 - [Data analysis](bike_2023_analyze_data.sql)
 - [Data visualization](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
 
@@ -62,6 +62,8 @@ Following exploration, the dataset was cleaned by:
 
 After cleaning, **613,050 entries were removed**, resulting in **a total of 1,777,409 entries** in the dataset.
 The cleaned data was saved as a .csv file, making it readily available for analysis.
+
+The R code for data exploration and data cleaning can be found [here](bike_2023_clean_data.Rmd). This [HTML document](bike_2023_clean_data.html) displays the output of some processes.
 
 ## Data analysis
 To address the key findings, the following analyses were performed using SQL.
