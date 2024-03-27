@@ -3,7 +3,7 @@ USE bike_data;
 
 -- Table data import wizard (bike_data_2023_cleaned.csv) 
 
-SELECT DISTINCT(ride_id) FROM bike_data_2023_cleaned;
+SELECT * FROM bike_data_2023_cleaned;
 
 -- The number of casual riders vs annual members.
 SELECT member_casual, COUNT(*) as num_of_rides
