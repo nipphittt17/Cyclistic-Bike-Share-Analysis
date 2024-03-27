@@ -2,7 +2,9 @@
 title: "bike_2023_clean_data"
 author: "nipphittt"
 date: "2024-03-27"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -10,8 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 This is an R Markdown document for data cleaning process of Cyclistic Bike Share Case Study.
-
-
 
 ### Necessary packages
 ```{r necessary packages}
@@ -23,7 +23,6 @@ library("dplyr")
 library("lubridate")
 library("hms")
 ```
-
 
 
 ### Download and merge the datasets from January to June 2023
@@ -41,12 +40,10 @@ bike_data <- rbind(bike_data1, bike_data2, bike_data3, bike_data4, bike_data5, b
 ```
 
 
-
 ### Data exploration
 ```{r data exploration}
 skim_without_charts(bike_data)
 ```
-
 
 
 ### Checks for duplications and spelling errors within string datatype columns
@@ -56,7 +53,6 @@ print(unique(bike_data$rideable_type))
 #print(unique(bike_data$start_station_name))
 #print(unique(bike_data$end_station_name))
 ```
-
 
 
 ### Remove entries with null values in start_station_id, start_station_name, end_station_id, and end_station_name.
@@ -69,7 +65,6 @@ bike_data <- bike_data %>%
 ```
 
 
-
 ### Add three new columns: ride_length (ended_at - started_at), day_of_week (Sunday = 1, Monday = 2, ...), and month.
 ```{r create additional columns}
 bike_data <- bike_data %>% 
@@ -79,13 +74,11 @@ bike_data <- bike_data %>%
 ```
 
 
-
 ### Exclude entries where the ended time preceded the started time.
 ```{r exclude entries 1}
 bike_data <- bike_data %>% 
   filter(!(ended_at <= started_at))
 ```
-
 
 
 ### Exclude entries with ride durations longer than a day or less than a minute.
@@ -94,7 +87,6 @@ bike_data <- bike_data %>%
   filter(!(difftime(ended_at, started_at) > 24*60*60)) %>% 
   filter(!(difftime(ended_at, started_at) < 60))
 ```
-
 
 
 ### Import cleaned data as .csv file
