@@ -46,7 +46,7 @@ In this case study, the datasets spanning from **January to June 2023**, compris
 ## Data exploration
 R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, **resulting in a total of 2,390,459 entries**. Subsequently, the **skim_without_charts** function was used to generate a data summary, as depicted in the figure below.
 
-<img src="/images/skim_without_charts.png" alt="Data Summary" height="500"> <br>
+<img src="/images/skim_without_charts.png" alt="Data Summary"> <br>
 
 Referring to the figure, it's evident that there are **null values** present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
 Following this observation, I conducted checks for **duplications** and **spelling errors** within string datatype columns, including rideable_type, start_station_name, and end_station_name. No errors were detected.
@@ -82,10 +82,10 @@ The queries can be found [here](bike_2023_analyze_data.sql)
 ## Data visualization
 The visualization was crafted using Tableau Public, featuring two pages: **Ride Distribution** and **Duration & Routes**.
 The first page illustrates the total number of rides compared between annual members and casual riders across six months, each bike type, weekdays, and hourly intervals. 
-<br><br> <img src="/images/dashboard_1.png" alt="Data Summary" height="400"> <br>
+<br><br> <img src="/images/dashboard_1.png" alt="Data Summary"> <br>
 
 The second page displays the average ride length (in minutes) across weekdays and months, alongside the top 10 popular routes for annual members, casual riders, and round trips.
-<br><br><img src="/images/dashboard_2.png" alt="Data Summary" height="400"> <br>
+<br><br><img src="/images/dashboard_2.png" alt="Data Summary"> <br>
 
 
 The interactive dashboard can be found [here](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
