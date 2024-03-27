@@ -1,18 +1,8 @@
 # Cyclistic Bike Share Case Study
 
-## Introduction
-The Cyclistic Bike Share Case Study is a capstone project for the Google Data Analytics Professional Certificate offered by Coursera.
+## Overview
+The Cyclistic Bike Share Case Study is a capstone project for the **Google Data Analytics Professional Certificate** offered by Coursera.
 
-
-## Background
-In 2016, Cyclistic launched a successful bike-share program in Chicago, which has grown to encompass 5,824 bicycles and 692 stations. The program allows users to unlock bikes from one station and return them to any other station in the system. Cyclistic's marketing strategy has supported flexible pricing plans, including single-ride passes, full-day passes, and annual memberships. Finance analysts have determined that annual members are more profitable than casual riders. Therefore, the company aims to convert casual riders into annual members. To achieve this goal, the team plans to analyze historical bike trip data to understand the differences between casual riders and annual members and identify effective marketing strategies.
-
-
-## Business tasks
-The following are key questions that will guide the future marketing program.
-1. How do annual members and casual riders use Cyclistic bikes differently?
-2. Why would casual riders buy Cyclistic annual memberships?
-3. How can Cyclistic use digital media to influence casual riders to become members?
  
 The primary objective of this project is to convert Cyclistic's casual riders into annual members. This will be achieved by uncovering valuable insights from data on how casual riders and annual members use Cyclistic bikes differently. The project utilized **R programming** for data exploration and cleaning, **SQL** for analysis, and **Tableau** for visualization. Below are the links to each component of the project for further exploration.
 
@@ -21,10 +11,20 @@ The primary objective of this project is to convert Cyclistic's casual riders in
 - [Data visualization](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link)
 
 
+## Background
+In 2016, Cyclistic launched a successful bike-share program in Chicago, which has grown to encompass 5,824 bicycles and 692 stations. The program allows users to unlock bikes from one station and return them to any other station in the system. Cyclistic's marketing strategy has supported flexible pricing plans, including single-ride passes, full-day passes, and annual memberships. Finance analysts have determined that annual members are more profitable than casual riders. Therefore, the company aims to convert casual riders into annual members. To achieve this goal, the team plans to analyze historical bike trip data to understand the differences between casual riders and annual members and identify effective marketing strategies.
+
+The following are key questions that will guide the future marketing program.
+1. How do annual members and casual riders use Cyclistic bikes differently?
+2. Why would casual riders buy Cyclistic annual memberships?
+3. How can Cyclistic use digital media to influence casual riders to become members?
+
+
+
 ## Data preparation
 The dataset can be found [here](https://divvy-tripdata.s3.amazonaws.com/index.html). It has been made by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement). <br>
 
-In this case study, I utilized a dataset spanning from **January to June, 2023**, comprising six files in total. Below is a table detailing the 13 variables along with their descriptions.
+In this case study, the datasets spanning from **January to June 2023**, comprising six files in total, was utilized. Below is a table detailing the 13 variables along with their descriptions.
 
 | Variable          | Description                                                                                                    |
 |-------------------|----------------------------------------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ In this case study, I utilized a dataset spanning from **January to June, 2023**
 
 
 ## Data exploration
-R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, resulting in a total of 2,390,459 entries. Subsequently, the **skim_without_charts** function was utilized to generate a data summary, as depicted in the figure below.
+R programming was employed for this step. Initially, the datasets from January to June 2023 were merged, **resulting in a total of 2,390,459 entries**. Subsequently, the **skim_without_charts** function was used to generate a data summary, as depicted in the figure below.
 
 <img src="/images/skim_without_charts.png" alt="Data Summary" height="500"> <br>
 
@@ -65,7 +65,7 @@ The cleaned data was saved as a .csv file, making it readily available for analy
 
 ## Data analysis
 To address the key findings, the following analyses were performed using SQL.
-1. The number of casual riders vs annual members.
+1. The number of casual riders vs annual members contributed to total rides.
 2. Average duration of all trips for casual riders and annual members.
 3. The number of casual riders and annual members for each type of bike.
 4. The number of casual riders and annual members per day of the week, alongside the average trip duration.
@@ -75,10 +75,10 @@ To address the key findings, the following analyses were performed using SQL.
 8. The top 10 popular routes for casual riders, including the total number of rides.
 9. The top 10 round-trip routes, including the number of rides by both members and casual riders.
 
-The codes and results can be found [here](bike_2023_analyze_data.sql)
+The queries and results can be found [here](bike_2023_analyze_data.sql)
 
 ## Data visualization
-The visualization was crafted using Tableau Public, featuring two pages: "Ride Distribution" and "Duration & Routes". 
+The visualization was crafted using Tableau Public, featuring two pages: **Ride Distribution** and **Duration & Routes**. 
 The first page illustrates the total number of rides compared between annual members and casual riders across six months, each bike type, weekdays, and hourly intervals. 
 <br><br> <img src="/images/dashboard_1.png" alt="Data Summary" height="500"> <br>
 
@@ -97,18 +97,18 @@ The interactive dashboard can be found [here](https://public.tableau.com/views/b
 
 - **Weekly Variation:** Annual members exhibit higher bike usage on weekdays, whereas casual riders show increased usage on weekends.
 
-- **Hourly Usage:** Annual members peak in usage at 8 a.m. and 5 p.m., while casual riders peak in the afternoon.
+- **Hourly Usage:** Annual members peak in usage at 8 a.m. and 5 p.m., while casual riders have increased usage along the afternoon.
 
 - **Ride Duration:** Casual riders typically experience longer average ride durations in comparison to annual members across all weekdays and months.
 
 - **Popular Routes:** Casual riders and annual members have distinctively different routes with the highest ride frequencies. While annual members' preferred routes tend to be more directed towards specific destinations, 7 out of the top 10 favored routes for casual riders are round trips. 
 
-Combining the analysis of bike type usage, weekday, and hourly patterns, it appears that annual members primarily utilize Cyclistic bikes for daily commutes or errands. On the other hand, casual riders tend to use Cyclistic bikes more for leisure. Analysis of popular routes also provides further evidence supporting this assumption.
+According to the analysis, it appears that annual members primarily utilize Cyclistic bikes for daily commutes or errands. On the other hand, casual riders tend to use Cyclistic bikes more for leisure. The popular routes also provides further evidence supporting this assumption.
 
 ## Recommendations
-- **Introduce Customized Membership Plans** tailored for casual riders since they exhibit distinct ride patterns compared to annual members. One recommendation is a membership plan targeting weekend bike users, offering reduced costs compared to regular annual memberships with a limited number of uses throughout the year e.g. approximately matching the number of weekends annually. This necessitates further analysis of the average yearly cost spending by casual riders to present the benefits of such a plan and encourage membership uptake.
+- **Introduce customized membership plans** tailored for casual riders since they exhibit distinct ride patterns compared to annual members. One recommendation is a membership plan targeting weekend bike users, offering reduced costs compared to regular annual memberships with a limited number of uses throughout the year e.g. approximately matching the number of weekends annually. This necessitates further analysis of the average yearly cost spending by casual riders to present the benefits of such a plan.
 
-- **Launch Advertisements During Peak Hours Particularly on Weekends**  through digital media. These advertisements could emphasize the advantages of annual membership, such as cost savings or additional benefits. This targeted approach aims to capture the attention of casual riders during their leisure time and persuade them to consider becoming long-term members.
+- **Launch advertisements during peak hours particularly on weekends** through digital media. These advertisements could emphasize the advantages of annual membership, such as cost savings or additional benefits. This targeted approach aims to capture the attention of casual riders during their leisure time and persuade them to consider becoming long-term members.
 
 - **Encourage casual riders who frequently use docked bikes**, as this group often has round trips with the longest average ride duration, around 40 minutes. This suggests usage for exercise. The company could consider developing an application to record ride duration and other health-related features. This application could offer exclusive features accessible only to members, serving as an incentive for casual riders to consider annual membership.
 
